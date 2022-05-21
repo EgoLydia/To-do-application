@@ -24,3 +24,16 @@ function addToDo() {
       row.parentNode.removeChild(row);
     });
   }
+
+  let editButtons = document.querySelectorAll(".edit-btn");
+  for (let i = 0; i < editButtons.length; i++) {
+    editButtons[i].addEventListener("click", (e) => {
+      const parent = editButtons[i].parentNode;
+      parent.parentNode.children[1].removeAttribute("readonly");
+      parent.parentNode.children[1].focus();
+
+      parent.children[1].style.display = "block";
+      parent.children[0].style.display = "none";
+    });
+  }
+
