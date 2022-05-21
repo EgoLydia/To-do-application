@@ -2,6 +2,7 @@ const addItem = document.getElementById("add-btn");
 const newInput = document.getElementById("input-text");
 const tasks = document.getElementById("tasks");
 
+addItem.addEventListener("click", addToDo);
 function addToDo() {
   let text = newInput.value;
   tasks.innerHTML += ` 
