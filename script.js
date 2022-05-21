@@ -3,6 +3,8 @@ const newInput = document.getElementById("input-text");
 const tasks = document.getElementById("tasks");
 
 addItem.addEventListener("click", addToDo);
+newInput.addEventListener("keyup", processKeyPress);
+
 function addToDo() {
   let text = newInput.value;
   tasks.innerHTML += ` 
@@ -52,3 +54,9 @@ function addToDo() {
   addItem.disabled = true;
 }
 
+function processKeyPress(event) {
+  addItem.disabled = event.target.value.trim() === "";
+  if (event.key === "Enter") {
+    addToDo();
+  }
+}
