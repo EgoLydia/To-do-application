@@ -16,3 +16,11 @@ function addToDo() {
                  </div>
               </div>
            `;
+
+  let deleteButtons = document.querySelectorAll(".delete-btn");
+  for (let i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i].addEventListener("click", (e) => {
+      const row = deleteButtons[i].parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    });
+  }
