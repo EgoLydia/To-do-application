@@ -45,3 +45,84 @@ body {
 #add-btn:hover {
   background-color: #7e3ece;
 }
+
+#add-btn:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
+
+#input-text {
+  border: 1px solid #e3e9ff;
+  padding: 10px;
+  display: block;
+  margin-right: 10px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#input-text:focus {
+  outline: none;
+  border-color: #af7eeb;
+}
+
+.item {
+  display: flex;
+  padding: 20px 20px;
+  background-color: #ffff;
+  align-items: center;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  border: 1px solid #2222;
+  justify-content: space-between;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+#tasks{
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  background-color: #fff;
+  border-radius: 3px;
+}
+.item-check {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.item-text {
+  color: #6d748a;
+  border: 0;
+  outline:none;
+  font-size: 16px;
+}
+
+.edit-btn,
+.delete-btn,
+.save-btn {
+  padding: 5px;
+  color: #fff;
+  border-radius: 3px;
+  border: 0;
+  cursor: pointer;
+  background-color: #af7eeb;
+}
+
+.edit-btn:hover,
+.delete-btn:hover,
+.save-btn:hover {
+  background-color: #7e3ece;
+}
+
+.edit-btn,
+.save-btn {
+  margin-right: 5px;
+}
+
+.action-btn {
+  display: flex;
+  margin-left: auto;
+}
+
+.item-check:checked + .item-text {
+  text-decoration: line-through;
+}
