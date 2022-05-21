@@ -37,3 +37,18 @@ function addToDo() {
     });
   }
 
+  let saveButtons = document.querySelectorAll(".save-btn");
+  for (let i = 0; i < saveButtons.length; i++) {
+    saveButtons[i].addEventListener("click", (e) => {
+      const parent = saveButtons[i].parentNode;
+      parent.parentNode.children[1].setAttribute("readonly", true);
+
+      parent.children[1].style.display = "none";
+      parent.children[0].style.display = "block";
+    });
+  }
+  newInput.value = "";
+
+  addItem.disabled = true;
+}
+
