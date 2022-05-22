@@ -1,17 +1,16 @@
-html {
-  box-sizing: border-box;
-  font-family: "Source Sans Pro", sans-serif;
-  background-color: #e3e9ff;
-}
 
 * {
+  font-family: "Source Sans Pro", sans-serif;
   margin: 0;
   padding: 0;
 }
 
 body {
+  box-sizing: border-box;
+  background-color: #e3e9ff;
   max-width: 500px;
-  margin: 10px auto;
+  margin: 0px auto;
+  height: 100vh;
 }
 
 .header {
@@ -66,13 +65,13 @@ body {
   border-color: #af7eeb;
 }
 
-.item {
+.task-item {
   display: flex;
   padding: 20px 20px;
   background-color: #ffff;
   align-items: center;
-  border-radius: 30px;
-  margin-bottom: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
   border: 1px solid #2222;
   justify-content: space-between;
   box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
@@ -80,16 +79,16 @@ body {
 
 #tasks{
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
-  padding: 30px 20px;
-  background-color: #fff;
   border-radius: 3px;
+  background-color: #fff;
+  border: 0;
 }
-.item-check {
+.task-check {
   margin-right: 15px;
   cursor: pointer;
 }
 
-.item-text {
+.task-text {
   color: #6d748a;
   border: 0;
   outline:none;
@@ -98,7 +97,7 @@ body {
 
 .edit-btn,
 .delete-btn,
-.save-btn {
+.save-btn, #clearAll {
   padding: 5px;
   color: #fff;
   border-radius: 3px;
@@ -109,7 +108,7 @@ body {
 
 .edit-btn:hover,
 .delete-btn:hover,
-.save-btn:hover {
+.save-btn:hover, #clearAll:hover {
   background-color: #7e3ece;
 }
 
@@ -118,11 +117,25 @@ body {
   margin-right: 5px;
 }
 
+#clearAll{
+  display: flex;
+  margin:  20px auto;
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1);
+
+}
 .action-btn {
   display: flex;
   margin-left: auto;
 }
 
-.item-check:checked + .item-text {
+.task-check:checked + .task-text {
   text-decoration: line-through;
+}
+
+
+
+@media (min-width:768px) {
+ body{
+  margin: 10px auto;
+ } 
 }
