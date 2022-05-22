@@ -11,15 +11,17 @@
 </head>
 <body>
     <h1 class="header">To-Do-App!</h1>
-    <div>
+    <div class="container">
+        <h4 class="subhead">Create a Todo</h4>
+        <p class="subhead">What's on your todo list?</p>
       <div class="input-wrapper">
-          <input id="input-text" type="text" placeholder="Enter new task...">
+          <input id="input-text" type="text" name="content" placeholder="Enter a task ...">
           <button id="add-btn" disabled>Add</button>
         </div>
-        <div id="tasks">
-        </div>
-        <button id="clearAll">Clear List</button>
-   </div>
+    </div>
+    <div id="tasks">
+    </div>
+    <button id="clearAll">Clear List</button>
   
 
     <script src="/script.js"></script>
