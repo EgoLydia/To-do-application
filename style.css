@@ -138,10 +138,13 @@ body {
   margin-left: auto;
 }
 
-.task-check:checked + .task-text {
+/* .task-check:checked + .task-text {
+  text-decoration: line-through;
+} */
+
+.completed{
   text-decoration: line-through;
 }
-
 @media (min-width: 768px) {
   body {
     margin: 10px auto;
