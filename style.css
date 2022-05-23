@@ -35,7 +35,7 @@ body {
   border-radius: 3px;
 }
 
-.subhead{
+.subhead {
   color: #6d748a;
   margin-bottom: 5px;
   text-align: center;
@@ -108,8 +108,7 @@ body {
 
 .edit-btn,
 .delete-btn,
-.save-btn,
-#clearAll {
+.save-btn {
   padding: 5px;
   color: #fff;
   border-radius: 3px;
@@ -133,18 +132,22 @@ body {
 #clearAll {
   display: flex;
   margin: 20px auto;
+  border: 0;
+  padding: 15px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  background-color: #af7eeb;
+  cursor: pointer;
   box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1);
 }
+
 .action-btn {
   display: flex;
   margin-left: auto;
 }
 
-/* .task-check:checked + .task-text {
-  text-decoration: line-through;
-} */
-
-.completed{
+.completed {
   text-decoration: line-through;
 }
 @media (min-width: 768px) {
