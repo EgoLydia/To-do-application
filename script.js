@@ -1,5 +1,3 @@
-let items = JSON.parse(localStorage.getItem("todo-list")) || [];
-
 const addItem = document.getElementById("add-btn");
 const newInput = document.getElementById("input-text");
 const tasks = document.getElementById("tasks");
@@ -9,15 +7,12 @@ addItem.addEventListener("click", addToDo);
 newInput.addEventListener("keyup", processKeyPress);
 clearAll.addEventListener("click", clearList);
 
-tasks.innerHTML = items;
-addEventFunction();
-
 function addToDo() {
   let text = newInput.value;
   tasks.innerHTML += ` 
                 <div class="task-item">
                  <input class="task-check" type="checkbox" />
-                 <textarea type="text" class="task-text" readonly value="${text}"></textarea>
+                 <input type="text" class="task-text" readonly value="${text}"></input>
                  <div class="action-btn">
                      <span class="edit-btn"><i class="bi bi-pencil"></i></span>
                      <span class="save-btn" style="display:none;"><i class="bi bi-check-circle"></i></span>
@@ -25,24 +20,12 @@ function addToDo() {
                      </div>
                      </div>
                    `;
-  addEventFunction();
-  newInput.value = "";
-  save();
-  addItem.disabled = true;
-}
 
-function save() {
-  localStorage.setItem("todo-list", JSON.stringify(tasks.innerHTML));
-}
-
-function addEventFunction() {
   let deleteButtons = document.querySelectorAll(".delete-btn");
   for (let i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].addEventListener("click", (e) => {
       const row = deleteButtons[i].parentNode.parentNode;
       row.parentNode.removeChild(row);
-
-      save();
     });
   }
 
@@ -55,8 +38,6 @@ function addEventFunction() {
 
       parent.children[1].style.display = "block";
       parent.children[0].style.display = "none";
-
-      save();
     });
   }
 
@@ -65,37 +46,22 @@ function addEventFunction() {
     saveButtons[i].addEventListener("click", (e) => {
       const parent = saveButtons[i].parentNode;
       parent.parentNode.children[1].setAttribute("readonly", true);
-      parent.parentNode.children[1].setAttribute("value", parent.parentNode.children[1].value);
 
       parent.children[1].style.display = "none";
       parent.children[0].style.display = "block";
-      console.log( parent.parentNode.children[1].value);
-      save();
     });
   }
+  newInput.value = "";
 
-  let checkBox = document.querySelectorAll(".task-check");
-  for (let i = 0; i < checkBox.length; i++) {
-    checkBox[i].checked =
-    checkBox[i].parentNode.children[1].classList.contains("completed");
-    checkBox[i].onchange = (e) => {
-      const parent = checkBox[i].parentNode;
-      if (e.target.checked) {
-        parent.children[1].classList.add("completed");
-      } else {
-        parent.children[1].classList.remove("completed");
-      }
-      save();
-    };
-  }
+  addItem.disabled = true;
 }
+
 function clearList() {
   if (tasks.innerHTML === "") {
     alert("There are no task here!");
   } else {
     tasks.innerHTML = "";
   }
-  save();
 }
 
 function processKeyPress(event) {
