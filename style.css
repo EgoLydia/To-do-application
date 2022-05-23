@@ -92,6 +92,7 @@ body {
   background-color: #fff;
   border: 0;
 }
+
 .task-check {
   margin-right: 15px;
   cursor: pointer;
@@ -150,6 +151,7 @@ body {
 .completed {
   text-decoration: line-through;
 }
+
 @media (min-width: 768px) {
   body {
     margin: 10px auto;

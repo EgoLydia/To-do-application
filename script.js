@@ -69,7 +69,6 @@ function addEventFunction() {
 
       parent.children[1].style.display = "none";
       parent.children[0].style.display = "block";
-      console.log( parent.parentNode.children[1].value);
       save();
     });
   }
@@ -89,6 +88,7 @@ function addEventFunction() {
     };
   }
 }
+
 function clearList() {
   if (tasks.innerHTML === "") {
     alert("There are no task here!");
