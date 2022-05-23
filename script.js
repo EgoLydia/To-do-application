@@ -17,7 +17,7 @@ function addToDo() {
   tasks.innerHTML += ` 
                 <div class="task-item">
                  <input class="task-check" type="checkbox" />
-                 <input type="text" class="task-text" readonly value="${text}"></input>
+                 <textarea type="text" class="task-text" readonly value="${text}"></textarea>
                  <div class="action-btn">
                      <span class="edit-btn"><i class="bi bi-pencil"></i></span>
                      <span class="save-btn" style="display:none;"><i class="bi bi-check-circle"></i></span>
